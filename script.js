@@ -27,18 +27,18 @@ function disagreeDisclaimer() {
     window.location.href = "https://www.linkedin.com/in/dipijethwa/";
 }
 
-/* --- Mobile Navigation Logic --- */
+/* --- Mobile Menu Toggle Logic --- */
 function toggleMenu() {
-    const nav = document.getElementById('navLinks');
-    nav.classList.toggle('active');
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
 }
 
-// Close mobile menu automatically when a link is clicked
+// Close mobile menu when a link is clicked
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
-        const nav = document.getElementById('navLinks');
-        if (nav.classList.contains('active')) {
-            nav.classList.remove('active');
+        const navLinks = document.querySelector('.nav-links');
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
         }
     });
 });
@@ -49,6 +49,12 @@ function openModal(modalId) {
     if (modal) {
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden'; // Prevent background scrolling behind the modal
+
+        // Also close mobile menu if it's open when clicking "Contact"
+        const navLinks = document.querySelector('.nav-links');
+        if (navLinks && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+        }
     }
 }
 

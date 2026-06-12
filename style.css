@@ -51,11 +51,6 @@ body {
     overflow: hidden;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
-
 h1,
 h2,
 h3 {
@@ -116,21 +111,10 @@ nav {
     display: block;
 }
 
-/* Hamburger Menu (Hidden on Desktop) */
 .hamburger {
     display: none;
-    flex-direction: column;
-    gap: 5px;
     cursor: pointer;
-    padding: 10px;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: var(--primary-color);
-    border-radius: 2px;
-    transition: var(--transition);
+    color: var(--primary-color);
 }
 
 .nav-links {
@@ -155,15 +139,14 @@ nav {
 
 /* --- HERO SECTION --- */
 .hero {
-    min-height: 100vh;
+    height: 100vh;
     /* Classy corporate boardroom/office background with neutral dark overlay */
     background: linear-gradient(rgba(15, 15, 15, 0.80), rgba(15, 15, 15, 0.90)), url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80') center/cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 100px 20px 40px;
-    /* Added top padding to account for fixed nav */
+    padding: 0 20px;
     color: var(--white);
 }
 
@@ -187,8 +170,8 @@ nav {
 .hero-buttons {
     display: flex;
     gap: 15px;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* BUTTONS */
@@ -216,6 +199,7 @@ nav {
     background: transparent;
     border: 2px solid var(--accent-color);
     color: var(--accent-color);
+    margin-left: 0;
 }
 
 .btn-outline:hover {
@@ -391,8 +375,6 @@ footer {
     align-items: flex-start;
     max-width: 1000px;
     margin: 0 auto 40px;
-    flex-wrap: wrap;
-    gap: 40px;
 }
 
 .footer-logo-img {
@@ -486,7 +468,7 @@ footer {
 }
 
 .disclaimer-text {
-    max-height: 50vh;
+    max-height: 400px;
     overflow-y: auto;
     padding-right: 15px;
     margin-bottom: 30px;
@@ -611,7 +593,7 @@ footer {
     margin-left: 0;
 }
 
-/* Scrollbar formatting */
+/* Scrollbar formatting for internal scrolling divs */
 .disclaimer-text::-webkit-scrollbar,
 .policy-scroll::-webkit-scrollbar {
     width: 6px;
@@ -623,52 +605,54 @@ footer {
     border-radius: 10px;
 }
 
-/* =========================================
-   RESPONSIVE MEDIA QUERIES
-   ========================================= */
+/* --- RESPONSIVE MEDIA QUERIES --- */
 
 /* Tablet Breakpoint */
 @media (max-width: 992px) {
-    section {
-        padding: 80px 5%;
-    }
-
     .about-grid {
         grid-template-columns: 1fr;
         gap: 40px;
     }
 
     .hero h1 {
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
 }
 
 /* Mobile Breakpoint */
 @media (max-width: 768px) {
+    section {
+        padding: 60px 5%;
+    }
 
-    /* Navigation */
+    /* Mobile Navigation */
     .hamburger {
-        display: flex;
+        display: block;
     }
 
     .nav-links {
+        display: none;
+        flex-direction: column;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
         background: var(--white);
-        flex-direction: column;
         padding: 20px 0;
-        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
-        display: none;
-        /* Hidden by default */
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     }
 
     .nav-links.active {
         display: flex;
     }
 
-    /* Hero Section */
+    .nav-links a {
+        padding: 10px 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Typography & Layout Adjustments */
     .hero h1 {
         font-size: 2.2rem;
     }
@@ -677,41 +661,23 @@ footer {
         font-size: 1rem;
     }
 
-    .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .btn-outline {
-        margin-left: 0;
-    }
-
-    /* General Sections */
-    section {
-        padding: 60px 5%;
-    }
-
     .section-title {
         font-size: 2rem;
-        margin-bottom: 40px;
     }
 
-    /* Practice Grid */
-    .practice-grid {
-        grid-template-columns: 1fr;
+    .founder-card {
+        padding: 30px 20px;
     }
 
-    /* Metrics */
-    .metrics-banner .number {
-        font-size: 3rem;
+    .practice-card {
+        padding: 30px 20px;
     }
 
-    /* Footer */
+    /* Footer Adjustments */
     .footer-content {
         flex-direction: column;
+        gap: 40px;
         align-items: center;
-        text-align: center;
     }
 
     .footer-col {
@@ -726,11 +692,19 @@ footer {
         text-align: center;
     }
 
-    /* Modals & Disclaimer */
-    .modal-content,
-    .disclaimer-content {
-        padding: 25px;
-        width: 95%;
+    /* Metrics Adjustments */
+    .metrics-banner {
+        padding: 60px 5%;
+    }
+
+    .metrics-banner .number {
+        font-size: 3rem;
+    }
+
+    /* Modal & Disclaimer Adjustments */
+    .disclaimer-content,
+    .modal-content {
+        padding: 30px 20px;
     }
 
     .disclaimer-buttons {
