@@ -6,510 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D Law | Corporate & Transactional Legal Advisory</title>
     <meta name="description"
-        content="D Law is a boutique corporate and commercial law practice based in Bangalore, advising businesses, founders, investors and private clients.">
+        content="D Law is a boutique corporate and commercial law practice advising businesses, founders, investors and private clients Pan-India.">
 
-    <!-- Google Fonts: Playfair Display for authoritative headings, Inter for clean, modern body text -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
         rel="stylesheet">
 
-    <style>
-        /* --- CSS VARIABLES --- */
-        :root {
-            --primary-color: #1A2F4C;
-            /* Deep Navy */
-            --accent-color: #C5A365;
-            /* Subtle Gold */
-            --text-main: #333333;
-            --text-light: #666666;
-            --bg-light: #F8F9FA;
-            --white: #FFFFFF;
-            --transition: all 0.3s ease;
-        }
-
-        /* --- RESET & TYPOGRAPHY --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-main);
-            line-height: 1.6;
-            background-color: var(--white);
-        }
-
-        h1,
-        h2,
-        h3,
-        .logo {
-            font-family: 'Playfair Display', serif;
-            color: var(--primary-color);
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        ul li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 8px;
-            color: var(--text-light);
-        }
-
-        ul li::before {
-            content: '■';
-            color: var(--accent-color);
-            font-size: 10px;
-            position: absolute;
-            left: 0;
-            top: 6px;
-        }
-
-        /* --- NAVIGATION --- */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: var(--white);
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            z-index: 100;
-        }
-
-        .logo-container {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-box {
-            background: #ccc;
-            color: white;
-            padding: 0px 12px;
-            border-radius: 8px;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .subtitle {
-            font-size: 11px;
-            font-weight: 500;
-            color: var(--text-light);
-            letter-spacing: 1px;
-            margin-top: 4px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--primary-color);
-            font-weight: 500;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(26, 47, 76, 0.9), rgba(26, 47, 76, 0.9)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80') center/cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            color: var(--white);
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            color: var(--white);
-            margin-bottom: 20px;
-            max-width: 900px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            font-weight: 300;
-            max-width: 700px;
-            margin-bottom: 40px;
-            color: #E0E0E0;
-        }
-
-        .btn {
-            padding: 15px 35px;
-            background: var(--accent-color);
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 4px;
-            border: none;
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 16px;
-        }
-
-        .btn:hover {
-            background: #A88A52;
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--accent-color);
-            color: var(--accent-color);
-            margin-left: 15px;
-        }
-
-        .btn-outline:hover {
-            background: var(--accent-color);
-            color: var(--white);
-        }
-
-        /* --- SECTIONS COMMON --- */
-        section {
-            padding: 100px 10%;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            text-align: center;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            width: 60px;
-            height: 3px;
-            background: var(--accent-color);
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        /* --- ABOUT SECTION --- */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-        }
-
-        .founder-card {
-            background: var(--bg-light);
-            padding: 40px;
-            border-radius: 8px;
-            border-top: 4px solid var(--accent-color);
-        }
-
-        .founder-card h3 {
-            margin-bottom: 10px;
-        }
-
-        .founder-card h4 {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            color: var(--accent-color);
-            margin-bottom: 20px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
-
-        /* --- PRACTICE AREAS SECTION --- */
-        .bg-light-section {
-            background-color: var(--bg-light);
-        }
-
-        .practice-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .practice-card {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-            transition: var(--transition);
-            border-bottom: 3px solid transparent;
-        }
-
-        .practice-card:hover {
-            transform: translateY(-5px);
-            border-bottom: 3px solid var(--accent-color);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        .practice-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 15px;
-        }
-
-        /* --- METRICS & SECTORS --- */
-        .metrics-banner {
-            background: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 80px 10%;
-        }
-
-        .metrics-banner h2 {
-            color: var(--white);
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .metrics-banner .number {
-            font-size: 4rem;
-            color: var(--accent-color);
-            font-weight: 700;
-            font-family: 'Inter', sans-serif;
-            margin: 20px 0;
-        }
-
-        .sectors {
-            margin-top: 50px;
-        }
-
-        .sectors-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .sector-pill {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* --- FOOTER & CONTACT --- */
-        footer {
-            background: #111;
-            color: #fff;
-            padding: 60px 10% 30px;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            max-width: 1000px;
-            margin: 0 auto 40px;
-            text-align: left;
-        }
-
-        .footer-col h3 {
-            color: var(--white);
-            margin-bottom: 20px;
-        }
-
-        .footer-col p,
-        .footer-col a {
-            color: #aaa;
-            text-decoration: none;
-            margin-bottom: 10px;
-            display: block;
-            font-size: 0.95rem;
-        }
-
-        .footer-col a:hover {
-            color: var(--accent-color);
-        }
-
-        .copyright {
-            border-top: 1px solid #333;
-            padding-top: 20px;
-            color: #666;
-            font-size: 0.8rem;
-        }
-
-        /* --- MODAL (POPUP FORM) --- */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-content {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 8px;
-            width: 90%;
-            max-width: 500px;
-            position: relative;
-            animation: modalFadeIn 0.3s ease;
-        }
-
-        @keyframes modalFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 24px;
-            cursor: pointer;
-            color: var(--text-light);
-            border: none;
-            background: none;
-        }
-
-        .modal-content h3 {
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--text-main);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: var(--primary-color);
-            outline: none;
-        }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                /* In a full build, add a hamburger menu here */
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                gap: 30px;
-                text-align: center;
-                align-items: center;
-            }
-
-            .form-group {
-                text-align: left;
-            }
-
-            .metrics-banner .number {
-                font-size: 3rem;
-            }
-        }
-    </style>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- External JS -->
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
+    <!-- Bar Council Disclaimer Overlay -->
+    <div class="disclaimer-overlay" id="disclaimerOverlay">
+        <div class="disclaimer-content">
+            <h3>Disclaimer</h3>
+            <div class="disclaimer-text">
+                <p>The rules of the Bar Council of India prohibit law firms from soliciting work or advertising in any
+                    manner. By clicking on "I Agree", the user acknowledges that:</p>
+                <ul>
+                    <li>The user wishes to gain more information about D Law, its practice areas, and its attorneys for
+                        their own information and use.</li>
+                    <li>The information is made available/provided to the user only on their specific request and any
+                        information obtained or material downloaded from this website is completely at the user's
+                        volition.</li>
+                    <li>None of the information contained on the website is in the nature of a legal opinion or
+                        otherwise amounts to any legal advice.</li>
+                    <li>There has been no advertisement, personal communication, solicitation, invitation, or inducement
+                        of any sort whatsoever from us or any of our members to solicit any work through this website.
+                    </li>
+                </ul>
+                <p>Any transmission, receipt or use of this website does not create any lawyer-client relationship. D
+                    Law is not liable for any consequence of any action taken by the user relying on
+                    material/information provided under this website.</p>
+            </div>
+            <div class="disclaimer-buttons">
+                <button class="btn btn-outline" onclick="disagreeDisclaimer()">I Disagree</button>
+                <button class="btn" onclick="agreeDisclaimer()">I Agree</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav>
         <div class="logo-container">
-            <a href="#" class="logo"><span class="logo-box">D</span> Law</a>
-            <span class="subtitle">Dipi Jethwa & Co.</span>
+            <a href="#" class="logo-link">
+                <img src="logo-dark.png" alt="D Law - Dipi Jethwa & Co." class="nav-logo-img">
+            </a>
         </div>
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#practice">Practice Areas</a>
             <a href="#experience">Experience</a>
-            <a href="#" onclick="openModal(); return false;">Contact</a>
+            <a href="#" onclick="openModal('contactModal'); return false;">Contact</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
         <h1>Corporate & Transactional Legal Advisory</h1>
-        <p>Combining large-law-firm experience with the agility and responsiveness of an independent practice. Based in
-            Bangalore, advising across the lifecycle of your business.</p>
+        <p>Delivering strategic corporate, commercial, and transactional legal solutions Pan-India. Advising businesses,
+            founders, investors, and private clients seamlessly across the lifecycle of their ventures.</p>
         <div>
-            <button class="btn" onclick="openModal()">Get in Touch</button>
+            <button class="btn" onclick="openModal('contactModal')">Get in Touch</button>
             <a href="#practice" class="btn btn-outline">Our Expertise</a>
         </div>
     </section>
@@ -525,7 +91,7 @@
                 <p>The firm focuses on transaction execution, strategic advisory, and practical legal solutions. Our
                     approach is execution-focused, with a strong emphasis on clarity, responsiveness, and partner-level
                     involvement on every mandate.</p>
-                <p><strong>We work closely with:</strong></p>
+                <p style="text-align: left;"><strong>We work closely with:</strong></p>
                 <ul>
                     <li>Startups and Growth-Stage Companies</li>
                     <li>Founders and Promoters</li>
@@ -546,11 +112,11 @@
                 <p>Her practice combines deep transactional expertise with hands-on execution, delivering
                     solution-oriented legal support.</p>
                 <br>
-                <p><strong>Qualifications:</strong></p>
+                <p style="text-align: left;"><strong>Qualifications:</strong></p>
                 <ul>
-                    <li>Master of Business Laws (MBL), NLSIU Bangalore</li>
+                    <li>Master of Business Laws (MBL), National Law School of India University, Bangalore</li>
                     <li>Bachelor of Laws (LL.B.), Faculty of Law, University of Delhi</li>
-                    <li>Qualified Company Secretary (CS), ICSI</li>
+                    <li>Company Secretary (CS), Institute of Company Secretaries of India</li>
                     <li>Bachelor of Commerce (Honours), University of Delhi</li>
                 </ul>
             </div>
@@ -608,13 +174,11 @@
     <section id="experience" class="metrics-banner">
         <h2>Cumulative Deal Value</h2>
         <div class="number">₹5,000+ Crore</div>
-        <p style="font-size: 1.2rem;">Hands-on role in <strong>50+ transactions</strong> across PE/VC, M&A,
-            restructuring and strategic investments.</p>
+        <p class="metrics-text">Hands-on role in <strong>50+ transactions</strong> across PE/VC, M&A, restructuring and
+            strategic investments.</p>
 
         <div class="sectors">
-            <h3
-                style="color: var(--white); font-family: 'Inter', sans-serif; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px;">
-                Sector Coverage</h3>
+            <h3 class="sectors-title">Sector Coverage</h3>
             <div class="sectors-grid">
                 <span class="sector-pill">Technology & SaaS</span>
                 <span class="sector-pill">Healthcare</span>
@@ -633,38 +197,31 @@
     <footer>
         <div class="footer-content">
             <div class="footer-col">
-                <div class="logo-container" style="margin-bottom: 20px;">
-                    <span class="logo" style="color: white;"><span class="logo-box" style="background:#555;">D</span>
-                        Law</span>
-                    <span class="subtitle" style="color: #aaa;">Dipi Jethwa & Co.</span>
-                </div>
-                <p>Corporate & Transactional Legal Advisory</p>
-                <p>Bangalore, India</p>
+                <img src="logo-light.png" alt="D Law - Dipi Jethwa & Co." class="footer-logo-img">
+                <p class="footer-desc">Corporate & Transactional Legal Advisory</p>
             </div>
             <div class="footer-col">
-                <h3 style="font-family: 'Inter', sans-serif; font-size: 1rem; text-transform: uppercase;">Contact Us
-                </h3>
-                <!-- Replace with your actual contact details -->
-                <a href="tel:+919876543210">📞 [Your Phone Number]</a>
-                <a href="mailto:info@dlaw.co.in">✉️ info@dlaw.co.in</a>
-                <button class="btn btn-outline" style="margin: 15px 0 0 0; padding: 8px 20px; font-size: 14px;"
-                    onclick="openModal()">Send a Message</button>
+                <h3 class="contact-title">Contact Us</h3>
+                <a href="mailto:dipi@dlaw.co.in">✉️ dipi@dlaw.co.in</a>
+                <button class="btn btn-outline footer-btn" onclick="openModal('contactModal')">Send a Message</button>
             </div>
         </div>
-        <div class="copyright">
-            <p>&copy; <span id="year"></span> D Law | Dipi Jethwa & Co. All rights reserved.</p>
+
+        <!-- Replaced Copyright with Policy Links -->
+        <div class="policy-links">
+            <a href="#" onclick="openModal('termsModal'); return false;">Terms of Use</a>
+            <span style="color:#666; margin: 0 10px;">|</span>
+            <a href="#" onclick="openModal('privacyModal'); return false;">Privacy Policy</a>
         </div>
     </footer>
 
     <!-- Contact Modal Form -->
     <div class="modal-overlay" id="contactModal">
         <div class="modal-content">
-            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <button class="close-btn" onclick="closeModal('contactModal')">&times;</button>
             <h3>Contact D Law</h3>
-            <p style="margin-bottom: 20px; color: var(--text-light); font-size: 0.9rem;">Please fill out the form below
-                or reach us directly at <strong>info@dlaw.co.in</strong>.</p>
-
-            <!-- You can integrate this form with Formspree (https://formspree.io/) or similar free services for static sites -->
+            <p class="modal-desc">Please fill out the form below or reach us directly at
+                <strong>dipi@dlaw.co.in</strong>.</p>
             <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
                 <div class="form-group">
                     <label for="name">Full Name</label>
@@ -679,36 +236,58 @@
                     <textarea id="message" name="message" rows="4" required
                         placeholder="How can we assist you?"></textarea>
                 </div>
-                <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                <button type="submit" class="btn submit-btn">Send Message</button>
             </form>
         </div>
     </div>
 
-    <!-- Interactive Scripts -->
-    <script>
-        // Set dynamic year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
+    <!-- Terms of Use Modal -->
+    <div class="modal-overlay" id="termsModal">
+        <div class="modal-content policy-content">
+            <button class="close-btn" onclick="closeModal('termsModal')">&times;</button>
+            <h3>Terms of Use</h3>
+            <div class="policy-scroll">
+                <p>By accessing and using this website, you agree to comply with and be bound by the following Terms of
+                    Use. If you do not agree, you must immediately discontinue use of this site.</p>
+                <p><strong>1. No Attorney-Client Relationship</strong><br>The materials on this website have been
+                    prepared for informational purposes only and do not constitute legal advice. Your use of this
+                    website, including submitting any form or sending an email, does not create an attorney-client
+                    relationship between you and D Law.</p>
+                <p><strong>2. Bar Council Rules</strong><br>In compliance with the rules of the Bar Council of India, D
+                    Law is not permitted to solicit work and advertise. The user acknowledges that the information
+                    provided on this website is for their specific request and information only.</p>
+                <p><strong>3. Disclaimer of Warranties</strong><br>The content of this website is provided "as is"
+                    without any representation or warranty, express or implied. D Law disclaims all liability in respect
+                    to actions taken or not taken based on any or all the contents of this site.</p>
+                <p><strong>4. Intellectual Property</strong><br>All content, branding, and materials on this site are
+                    the property of D Law. Unauthorized use or reproduction is strictly prohibited.</p>
+            </div>
+        </div>
+    </div>
 
-        // Modal Logic
-        const modal = document.getElementById('contactModal');
+    <!-- Privacy Policy Modal -->
+    <div class="modal-overlay" id="privacyModal">
+        <div class="modal-content policy-content">
+            <button class="close-btn" onclick="closeModal('privacyModal')">&times;</button>
+            <h3>Privacy Policy</h3>
+            <div class="policy-scroll">
+                <p>This Privacy Policy is in accordance with the Information Technology Act, 2000, and applicable data
+                    protection rules in India.</p>
+                <p><strong>1. Information Collection</strong><br>We may collect personally identifiable information
+                    (such as your name and email address) only when voluntarily submitted by you through our contact
+                    form.</p>
+                <p><strong>2. Use of Information</strong><br>Any information provided to D Law is used strictly to
+                    respond to your inquiries and requests. We do not use your information for marketing purposes
+                    without your explicit consent.</p>
+                <p><strong>3. Data Sharing and Protection</strong><br>D Law maintains strict confidentiality of all user
+                    data. We do not sell, rent, or trade your personal information to third parties. We employ standard
+                    security protocols to protect data from unauthorized access or disclosure.</p>
+                <p><strong>4. Third-Party Links</strong><br>Our website may contain links to other websites. We are not
+                    responsible for the privacy practices or the content of such external sites.</p>
+            </div>
+        </div>
+    </div>
 
-        function openModal() {
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        }
-
-        function closeModal() {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
-        }
-
-        // Close modal when clicking outside of it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-    </script>
 </body>
 
 </html>
