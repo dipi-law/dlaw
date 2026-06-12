@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D Law | Corporate & Transactional Legal Advisory</title>
     <meta name="description"
-        content="D Law is a boutique corporate and commercial law practice advising businesses, founders, investors and private clients Pan-India.">
+        content="D Law is a boutique corporate and commercial law practice advising businesses, founders, investors and private clients across India.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,7 +61,15 @@
                 <img src="logo-dark.png" alt="D Law - Dipi Jethwa & Co." class="nav-logo-img">
             </a>
         </div>
-        <div class="nav-links">
+
+        <!-- Hamburger Menu Icon for Mobile -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-links" id="navLinks">
             <a href="#about">About</a>
             <a href="#practice">Practice Areas</a>
             <a href="#experience">Experience</a>
@@ -72,9 +80,9 @@
     <!-- Hero Section -->
     <section class="hero">
         <h1>Corporate & Transactional Legal Advisory</h1>
-        <p>Delivering strategic corporate, commercial, and transactional legal solutions Pan-India. Advising businesses,
-            founders, investors, and private clients seamlessly across the lifecycle of their ventures.</p>
-        <div>
+        <p>Delivering strategic corporate, commercial, and transactional legal solutions. Advising businesses,
+            founders, investors, and private clients seamlessly across India.</p>
+        <div class="hero-buttons">
             <button class="btn" onclick="openModal('contactModal')">Get in Touch</button>
             <a href="#practice" class="btn btn-outline">Our Expertise</a>
         </div>
@@ -87,7 +95,7 @@
             <div class="about-text">
                 <h3>Solution-oriented. Commercially practical.</h3>
                 <p>D Law is a boutique corporate and commercial law practice advising businesses, founders, investors,
-                    and private clients across the lifecycle of a business.</p>
+                    and private clients across the lifecycle of a business, with a Pan-India presence.</p>
                 <p>The firm focuses on transaction execution, strategic advisory, and practical legal solutions. Our
                     approach is execution-focused, with a strong emphasis on clarity, responsiveness, and partner-level
                     involvement on every mandate.</p>
@@ -198,6 +206,7 @@
             <div class="footer-col">
                 <img src="logo-light.png" alt="D Law - Dipi Jethwa & Co." class="footer-logo-img">
                 <p class="footer-desc">Corporate & Transactional Legal Advisory</p>
+                <p class="footer-desc">Pan-India Practice</p>
             </div>
             <div class="footer-col">
                 <h3 class="contact-title">Contact Us</h3>
@@ -206,7 +215,7 @@
             </div>
         </div>
 
-        <!-- Replaced Copyright with Policy Links -->
+        <!-- Policy Links -->
         <div class="policy-links">
             <a href="#" onclick="openModal('termsModal'); return false;">Terms of Use</a>
             <span style="color:#666; margin: 0 10px;">|</span>

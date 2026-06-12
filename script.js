@@ -23,10 +23,25 @@ function agreeDisclaimer() {
 }
 
 function disagreeDisclaimer() {
-    // Redirect un-consenting traffic away from the website
-    window.location.href = "https://www.google.com";
+    // Redirect un-consenting traffic to LinkedIn profile
+    window.location.href = "https://www.linkedin.com/in/dipijethwa/";
 }
 
+/* --- Mobile Navigation Logic --- */
+function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('active');
+}
+
+// Close mobile menu automatically when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        const nav = document.getElementById('navLinks');
+        if (nav.classList.contains('active')) {
+            nav.classList.remove('active');
+        }
+    });
+});
 
 /* --- General Modal Logic (Contact, Terms, Privacy) --- */
 function openModal(modalId) {
